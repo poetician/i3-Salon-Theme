@@ -1,0 +1,567 @@
+# ㄗ 𑁣 𑁗 ፖ ༑ ᙅ ༑ ₳ ⴄ 𓁿Ꝣᰃ𑊸  ᰜᰜᰜ ⼫𐍈𐔹ⵖЪДⴽ ᕮᗤ𐏒𐌕𐏒𐀏ꤚ ᰜᰜ#
+#ᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜᰜ#
+
+# https://thenextpoetician.blogspot.com/      # https://pastebin.com/u/poetician
+
+# Developer URL:https://i3wm.org/
+# Version: 4.16.1-186-gf3fffbae (2020-03-01, branch "makepkg") © 2009 Michael Stapelberg and contributors.
+
+# Derived in part from ArcoLinux default:
+# https://arcolinux.info/ # https://github.com/arcolinux # https://www.youtube.com/channel/UCJdmdUp5BrsWsYVQUylCMLg
+
+#ᰜᰜᰜᰜᰜᰜ Key Names ᰜᰜᰜᰜᰜᰜ#
+
+# Mod = Super key / Mod4        # Control = Ctrl key            # Mod1 = Alt key
+# Shift = Shift key             # Return = Enter or Return key  # Escape = Escape key
+# Pause = Pause key             # Print = Print key             # Tab = Tab key
+
+# Define the $mod variable key
+set $mod Mod4
+
+#ᰜᰜᰜᰜᰜᰜ Dual Monitor Setup ᰜᰜᰜᰜᰜᰜ#
+
+set $Screen1 HDMI-A-0
+set $Screen2 DVI-D-0
+
+workspace 1 output $Screen1
+workspace 2 output $Screen1
+workspace 3 output $Screen1
+workspace 4 output $Screen1
+workspace 5 output $Screen1
+workspace 6 output $Screen1
+workspace 7 output $Screen1
+workspace 8 output $Screen2
+workspace 9 output $Screen2
+workspace 10 output $Screen2
+workspace 11 output $Screen2
+workspace 12 output $Screen2
+workspace 13 output $Screen2
+workspace 14 output $Screen2
+
+# Use arandr for the configuration
+exec xrandr --no-startup-id --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-0 -mode 1920x1080 --pos 1920x0 --rotate normal
+
+#####################################################
+#ᰜᰜᰜᰜᰜᰜ Workspace Switching Functions ᰜᰜᰜᰜᰜᰜ#
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+minus workspace $ws11
+bindsym $mod+equal workspace $ws12
+bindsym $mod+bracketleft workspace $ws13
+bindsym $mod+bracketright workspace $ws14
+bindsym $mod+grave workspace $itchy
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+minus move container to workspace $ws11; workspace $ws11
+bindsym $mod+Shift+equal move container to workspace $ws12; workspace $ws12
+bindsym $mod+Shift+bracketleft move container to workspace $ws13; workspace $ws13
+bindsym $mod+Shift+bracketright move container to workspace $ws14; workspace $ws14
+bindsym $mod+Shift+grave move container to workspace $itchy; workspace $itchy
+
+#ᰜᰜᰜᰜᰜᰜ Reload Changed Configuration ᰜᰜᰜᰜᰜᰜ#
+
+# Restart i3 in place (preserves the layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Reload the configuration file (problematic with some apps; logging out/in is preferred)
+bindsym $mod+Shift+c reload
+
+#ᰜᰜᰜᰜᰜᰜ Stop Applications ᰜᰜᰜᰜᰜᰜ#
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Xkill focused window
+bindsym --release $mod+Escape exec xkill
+
+# Hibernate, Lockscreen, Logout, Reboot, Suspend
+bindsym $mod+x exec arcolinux-logout
+
+############################################
+#ᰜᰜᰜᰜᰜᰜ Workspace Appearance ᰜᰜᰜᰜᰜᰜ#
+
+##START THEMING
+#Theme name : 0043 Misty Road
+
+# class                 border    background text    indicator child-border
+client.placeholder      #00000000 #00000000  #4f433f #00000000 #333333
+client.background       #00000000
+client.unfocused        #00000000 #00000000  #fcc48a #00000000 #9c9c9c
+client.focused          #00000000 #00000000  #B87333 #00000000 #3d3d3d
+client.focused_inactive #00000000 #00000000  #4f433f #00000000 #626262
+client.urgent           #00000000 #00000000  #a16b1c #000000   #ffffff
+
+##STOP THEMING
+
+#ᰜᰜᰜᰜᰜᰜ i3-Next-Gaps ᰜᰜᰜᰜᰜᰜ#
+# Settings for I3 next gaps https://github.com/Airblader/i3/tree/gaps-next
+
+#for_window [class="^.*"] pixel 4
+gaps inner 4
+gaps outer 4
+smart_gaps on
+smart_borders on
+
+#ᰜᰜᰜᰜᰜᰜ Resize Windows ᰜᰜᰜᰜᰜᰜ#
+# Resizing windows with keyboard only: https://unix.stackexchange.com/q/255344/150597
+
+# Resizing by 1
+bindsym $mod+control+Right resize grow width 1 px or 1 ppt
+bindsym $mod+control+Left resize shrink width 1 px or 1 ppt
+bindsym $mod+control+Up resize shrink height 1 px or 1 ppt
+bindsym $mod+control+Down resize grow height 1 px or 1 ppt
+
+#ᰜᰜᰜᰜᰜᰜ Resize i3-Gaps ᰜᰜᰜᰜᰜᰜ#
+# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle
+
+bindsym control+Shift+q gaps left current plus 10
+bindsym control+Shift+w gaps left current minus 10
+bindsym control+Shift+a gaps right current plus 10
+bindsym control+Shift+s gaps right current minus 10
+bindsym control+Shift+e gaps top current plus 10
+bindsym control+Shift+d gaps bottom current plus 10
+bindsym control+Shift+r gaps top current minus 10
+bindsym control+Shift+f gaps bottom current minus 10
+bindsym control+Shift+t gaps outer current toggle 40
+bindsym control+Shift+g gaps outer current plus 10
+bindsym control+Shift+b gaps outer current minus 10
+bindsym control+Shift+y gaps outer all set 10
+bindsym control+Shift+h gaps outer all set 20
+bindsym control+Shift+n gaps outer all set 40
+bindsym control+Shift+u gaps vertical current set 20
+bindsym control+Shift+j gaps outer all set 40
+bindsym control+Shift+m gaps outer all set 60
+bindsym control+Shift+i gaps inner all set 5; gaps outer all set 5
+bindsym control+Shift+k gaps inner all set 15; gaps outer all set 15
+bindsym control+Shift+comma gaps inner all set 30; gaps outer all set 30
+bindsym control+grave gaps outer current plus 10
+bindsym control+Shift+grave gaps outer current minus 10
+bindsym control+Shift+o gaps vertical current plus 10
+bindsym control+Shift+l gaps vertical current minus 10
+bindsym control+Shift+period gaps horizontal current plus 10
+bindsym control+Shift+slash gaps horizontal current minus 10
+bindsym control+Shift+bracketleft gaps all set minus 10
+bindsym control+Shift+bracketright gaps all set plus 10
+bindsym control+Shift+semicolon gaps right current plus 10
+bindsym control+Shift+apostrophe gaps right current minus 10
+
+# popup_during_fullscreen smart|ignore|leave_fullscreen
+popup_during_fullscreen leave_fullscreen
+
+############################################################
+#ᰜᰜᰜᰜᰜᰜ Assigned Applications and Directives ᰜᰜᰜᰜᰜᰜ#
+
+set $ws1 "1"
+assign [class="firefox"] $ws1
+for_window [class="firefox"]focus
+exec --no-startup-id firefox
+bindsym $mod+F1 exec --no-startup-id firefox
+
+set $ws2 "2"
+assign [class="Atom|Nemo"] $ws2
+for_window [class="Atom|Nemo"]focus
+for_window [class="Nemo-terminal-prefs"]focus, floating enable
+bindsym $mod+F2 exec atom ~/.config/i3/config
+exec --no-startup-id nemo
+bindsym $mod+Shift+Return exec nemo
+
+set $ws3 "3"
+assign [class="Cherrytree|Xfce4-dict"] $ws3
+for_window  [class="Cherrytree"]focus, floating enable, resize set 1100 960, move position 50 70
+exec cherrytree
+bindsym $mod+control+t exec cherrytree
+for_window [class="Xfce4-dict"]focus, floating enable, resize set 480 960, move position 1205 70
+bindsym $mod+control+d exec xfce4-dict
+
+set $ws4 "4"
+assign [class="libreoffice|Soffice"] $ws4
+for_window [class="libreoffice"]focus
+for_window [class="Soffice"] floating enable, resize set 840 720, move position 7 60
+exec --no-startup-id libreoffice
+bindsym $mod+F4 exec libreoffice
+
+set $ws5 "5"
+assign [class="kdenlive"] $ws5
+for_window [class="kdenlive"]focus
+bindsym $mod+F5 exec kdenlive
+
+set $ws6 "6"
+assign [class="Darktable|Gimp-2.10"] $ws6
+for_window [class="Darktable|Gimp-2.10"]focus
+bindsym $mod+Shift+d exec darktable
+bindsym $mod+F6 exec gimp-2.10
+for_window [instance="script-fu"] border normal
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="setup"] floating enable
+
+set $ws7 "7"
+assign [class="Google Earth Pro"] $ws7
+for_window [class="Google Earth Pro"]focus
+bindsym $mod+F7 exec --no-startup-id google-earth-pro
+
+set $ws8 "8"
+assign [class="Audio Recorder|obs"] $ws8
+for_window [class="Audio Recorder"] floating enable, move position 2860 40
+for_window [class="obs"]focus
+bindsym $mod+F8 exec obs
+
+set $ws9 "9"
+assign [class="Meld"] $ws9
+for_window [class="Meld"]focus, floating enable, resize set 1912 1038, move position 1924 36
+exec --no-startup-id meld
+bindsym $mod+F9 exec meld
+
+set $ws10 "10"
+assign [class="VirtualBox|VirtualBox Manager|VirtualBox Machine"] $ws10
+for_window [class="Deadbeef"] focus, floating enable, move position 2035 600
+for_window [class="VirtualBox Machine|VirtualBox Manager"]focus, floating disable
+for_window [class="VirtualBox"] move position 1920 480
+exec no-startup-id deadbeef
+exec --no-startup-id virtualbox manager
+bindsym $mod+F10 exec virtualbox manager
+
+set $ws11 "11"
+assign [class="Arcolinux-tweak-tool.py|Blender"] $ws11
+for_window [class="Arcolinux-tweak-tool.py"]focus, floating enable, resize set 800 800, move position 2480 140
+bindsym $mod+control+e exec arcolinux-tweak-tool
+bindsym $mod+control+b exec blender
+
+set $ws12 "12"
+assign [class="Kazam|qBittorrent|Timeshift-gtk|Transmission-gtk|VokoscreenNG"] $ws12
+for_window [class="Timeshift-gtk"] floating enable, resize set 760 900, move position 1925 95
+for_window [class="Transmission-gtk"] floating enable, resize set 900 480, move position 2820 60
+for_window [class="qBittorrent"] floating enable, resize set 1145 900, move position 2690 95
+for_window [class="Kazam"] move position 1940 40
+bindsym $mod+F11 exec timeshift-launcher
+bindsym $mod+F12 exec qbittorrent
+exec --no-startup-id qbittorrent
+
+set $ws13 "13"
+assign [class="Filezilla"] $ws13
+bindsym $mod+Shift+f exec filezilla
+
+set $ws14 "14"
+assign [class="Gcolor2|Oomox|__main__.py"] $ws14
+for_window [class="Gcolor2"]focus, move position 3160 670
+for_window [class="Oomox"] focus, floating enable, resize set 1090 990, move position 1930 40
+for_window [class="Lxappearance"] focus, floating enable, resize set 810 560, move position 3030 40
+bindsym $mod+Shift+g exec gcolor2
+bindsym $mod+l exec lxappearance
+bindsym $mod+o exec oomox-gui
+
+set $itchy "itchy"
+for_window [class="Xscreensaver-demo"] floating enable, move scratchpad, move position 2270 40
+exec_always --no-startup-id xscreensaver
+exec --no-startup-id xscreensaver-demo
+bindsym $mod+control+x exec xscreensaver-demo
+bindsym $mod+shift+x [class="Xscreensaver-demo"] scratchpad show
+
+for_window [class="Deadbeef"] floating enable, move scratchpad, move position 2000 600
+exec no-startup-id deadbeef
+bindsym $mod+shift+s [class="Deadbeef"] scratchpad show
+#############################################
+#ᰜᰜᰜᰜᰜᰜ Application Launching ᰜᰜᰜᰜᰜᰜ#
+
+set $rofi exec rofi -show-icons -lines 8 -columns 2 -eh 1 -padding 100 -width 60 -font "Federation 11"
+# Start drun Mode
+bindsym $mod+r $rofi -show drun
+# Start Rofi Combi Mode
+bindsym $mod+control+c $rofi -show combi
+# Start Rofi Window Mode
+bindsym $mod+control+w $rofi -show window
+# Start Rofi with Rofi-Shortcuts
+bindsym $mod+control+r exec ~/.config/rofi/rofi-shortcuts/rofi-shortcuts.sh
+# Start Rofi Theme Selector
+bindsym control+mod1+r exec --no-startup-id rofi-theme-selector
+
+for_window [class="Alacritty"] floating enable, resize set 760 700, move position 1151 337
+bindsym Mod1+comma [class="Alacritty"] scratchpad show
+bindsym $mod+Return exec alacritty
+
+for_window [class="Arcolinux-welcome-app.py"] floating enable
+bindsym $mod+w exec arcolinux-welcome-app
+
+bindsym $mod+control+f exec catfish; focus
+
+for_window [class="flameshot"] floating enable, resize set 730 480
+bindsym $mod+g exec flameshot
+
+for_window [class="Gnome-calendar"] resize set 844 800, move position 24 54
+bindsym $mod+control+a exec gnome-calendar
+for_window [class="Org.gnome.clocks"] floating enable, resize set 350 477
+bindsym $mod+control+h exec gnome-clocks
+bindsym $mod+control+j exec gnome-logs
+
+for_window [class="Gucharmap"] move scratchpad, resize set 800 600, move position 10 436
+bindsym Mod1+period [class="Gucharmap"] scratchpad show
+bindsym control+Mod1+period exec gucharmap
+
+bindsym $mod+control+i exec gvim
+bindsym $mod+shift+k exec handbrake
+
+for_window [class="Kvantum Manager"] floating enable
+bindsym $mod+k exec kvantummanager
+
+for_window [class="Mate-system-monitor"] floating enable, resize set 800 987, move position 560 48
+bindsym $mod+control+m exec mate-system-monitor
+
+bindsym $mod+n exec nitrogen
+for_window [class="Nitrogen"] floating enable, resize set 800 880, move position 1040 110
+
+bindsym $mod+control+n exec xfce4-notes
+
+for_window [class="Pamac-manager"] floating enable, resize set 800 700, move position 510 80
+bindsym control+mod1+g exec --no-startup-id pamac-manager
+
+bindsym $mod+p exec putty
+
+for_window [class="qt5ct"] floating enable, resize set 900 720, move position 510 160
+bindsym $mod+control+q exec qt5ct
+
+bindsym Shift+Print exec --no-startup-id "flameshot gui -p ~/Images/Flameshot"
+bindsym Print exec --no-startup-id scrot ' -%Y-%m-%d-%s_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir IMAGES)'
+bindsym Control+Print exec --no-startup-id xfce4-screenshooter
+
+for_window [class="Xfce4-appfinder"] floating enable
+bindsym $mod+control+l exec --no-startup-id xfce4-appfinder
+bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
+bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager, focus
+
+#ᰜᰜᰜᰜᰜᰜ Loading Applications at Startup ᰜᰜᰜᰜᰜᰜ#
+
+exec --no-startup-id python3 $HOME/.config/i3/i3-swallow.py
+#exec_always --no-startup-id autotiling
+exec_always --no-startup-id unclutter --timeout 2
+exec nitrogen --restore
+exec_always --no-startup-id numlockx on
+exec killall picom &&
+exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always --no-startup-id ~/.config/polybar/i3-start.sh &
+exec --no-startup-id xfce4-power-manager &
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#ᰜᰜᰜᰜᰜᰜ Tray Applications ᰜᰜᰜᰜᰜᰜ#
+
+# Network
+exec --no-startup-id nm-applet
+# Parcellite
+exec --no-startup-id parcellite
+# Workrave
+exec --no-startup-id workrave
+# Volume
+exec --no-startup-id volumeicon
+# Updater
+exec --no-startup-id pamac-tray
+# Dropbox
+exec --no-startup-id dropbox start
+# MEGA
+exec --no-startup-id megasync
+
+#ᰜᰜᰜᰜᰜᰜ Floating or Tiled ᰜᰜᰜᰜᰜᰜ#
+
+for_window [class="Engrampa|File-roller"] floating enable
+for_window [class="Font-manager"] floating enable
+for_window [class="Galculator|Gnome-calendar"] floating enable
+for_window [class="Gnome-disks|^Gnome-font-viewer$"] floating enable
+for_window [class="GParted|^Gpick$"] floating enable
+for_window [class="Grub-customizer"] floating enable
+for_window [class="Imagewriter|Usb-creator-gtk"] floating enable
+for_window [class="System-config-printer.py"] floating enable
+for_window [class="Xfce4-settings-manager|Xfce4-taskmanager"] floating enable
+
+#ᰜᰜᰜᰜᰜᰜ Scratchpad ᰜᰜᰜᰜᰜᰜ#
+
+# move the currently focused window to the scratchpad
+bindsym Mod1+Shift+slash move scratchpad
+bindsym Mod1+slash scratchpad show
+
+bindsym $mod+shift+p [class="kcolorchooser"] scratchpad show
+
+#############################################
+#ᰜᰜᰜᰜᰜᰜ Navigating Containers ᰜᰜᰜᰜᰜᰜ#
+
+# Use mouse+$mod to drag floating windows to their new position
+floating_modifier $mod
+
+# Toggle Tiling / Floating
+bindsym control+space floating toggle
+
+# Change Focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move Focused Window
+bindsym $mod+Shift+Left move left 1px
+bindsym $mod+Shift+Down move down 1px
+bindsym $mod+Shift+Up move up 1px
+bindsym $mod+Shift+Right move right 1px
+
+# Open next workspace in order / Move container to next workspace
+bindsym $mod+Shift+n exec --no-startup-id ~/Data/i3-next-available-workspace/next_available_ws.sh
+# Move container to new window
+bindsym $mod+Shift+h exec --no-startup-id ~/Data/i3-next-available-workspace/next_available_ws.sh -m
+
+#############################################
+#ᰜᰜᰜᰜᰜᰜ Navigating Workspaces ᰜᰜᰜᰜᰜᰜ#
+
+# Navigate to Next / Previous Workspace
+bindsym Mod1+Shift+Tab workspace prev
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+bindsym Mod1+Ctrl+Right workspace next
+bindsym $mod+Tab workspace back_and_forth
+
+# Switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# Switch back to previous workspace by pressing the same keybinding used to switch from it
+workspace_auto_back_and_forth yes
+
+#########################################
+#ᰜᰜᰜᰜᰜᰜ Tiling Parameters ᰜᰜᰜᰜᰜᰜ#
+
+# workspace_layout default|stacking|tabbed
+workspace_layout default
+
+# orientation for new workspaces
+default_orientation horizontal
+# split in horizontal orientation
+bindsym $mod+h split h
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+# focus the child "HHVH"
+bindsym $mod+d focus child
+
+# application focus smart|urgent|focus|none
+focus_on_window_activation smart
+
+######################################
+#ᰜᰜᰜᰜᰜᰜ Border Control ᰜᰜᰜᰜᰜᰜ#
+
+# default_border normal | none | pixel
+default_border pixel 6
+# default_floating_border normal | none| pixel
+default_floating_border pixel 6
+
+# hide_edge_borders none|vertical|horizontal|both|smart
+hide_edge_borders smart
+bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
+
+# changing border style
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
+
+new_window pixel 6
+# new_window normal | new_window none
+
+new_float pixel 6
+# new_float normal | none
+
+##############################################
+#ᰜᰜᰜᰜᰜᰜ Variety for Wallpapers ᰜᰜᰜᰜᰜᰜ#
+
+# exec --no-startup-id variety
+for_window [class="Variety"] floating enable
+for_window [instance="Variety Preferences"] floating enable
+
+# trash wallpaper
+bindsym mod1+t exec --no-startup-id variety -t
+# next wallpaper
+bindsym mod1+n exec --no-startup-id variety -n
+bindsym mod1+Right exec --no-startup-id variety -n
+# previous wallpaper
+bindsym mod1+p exec --no-startup-id variety -p
+bindsym mod1+Left exec --no-startup-id variety -p
+# favorite wallpaper
+bindsym mod1+f exec --no-startup-id variety -f
+# pause wallpaper
+bindsym mod1+Up exec --no-startup-id variety --pause
+# resume wallpaper
+bindsym mod1+Down exec --no-startup-id variety --resume
+
+#ᰜᰜᰜᰜᰜᰜ Variety with Pywal ᰜᰜᰜᰜᰜᰜ#
+
+# next wallpaper
+bindsym mod1+Shift+n exec --no-startup-id variety -n && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+# previous wallpaper
+bindsym mod1+Shift+p exec --no-startup-id variety -p && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+# trash wallpaper
+bindsym mod1+Shift+t exec --no-startup-id variety -t && wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)&
+# update wallpaper
+bindsym mod1+Shift+u exec --no-startup-id wal -i $(cat $HOME/.config/variety/wallpaper/wallpaper.jpg.txt)
+
+#ᰜᰜᰜᰜᰜᰜ                     The End - Now Start Again                      ᰜᰜᰜᰜᰜᰜ#
+#########################################################################################
+
+# All these words are empty baskets
+# Carried to the market square
+# Trading truth and lies in barter
+# Warranting warn buyer beware
+
+# All these words are reeds I wove
+# Taught to hold my pauper’s share
+# Show me yours before and after
+# Out in the open we may compare
+
+# All these words are on the table
+# Yoked to folly the shell game starts
+# Trick the eye they who are able
+# Cunning those the same the heart
+
+# All these words are fruits of labour
+# Bounty’s grace on harvest’s day
+# Test taste and judge the many flavours
+# Fill your need be on your way
+
+# All these words so meet and proper
+# Morning meals served hot or cold
+# Savour meaning old sharecropper
+# Recall the stories you were told
+
+# All these words are open caskets
+# Life goes on even nothing’s fair
+# Gather seeds for ever after
+# Till the breach sow to repair
