@@ -101,7 +101,7 @@ bindsym $mod+x exec arcolinux-logout
 #ᰜᰜᰜᰜᰜᰜ Workspace Appearance ᰜᰜᰜᰜᰜᰜ#
 
 ##START THEMING
-#Theme name : 0043 Misty Road
+#Theme name : Salon
 
 # class                 border    background text    indicator child-border
 client.placeholder      #00000000 #00000000  #4f433f #00000000 #333333
