@@ -40,7 +40,7 @@ format-margin =
 format-offset =
 
 [colors]
-; 0043 Misty Road theme ============
+; Salon theme ============
 background = #66333333
 foreground = #dcdcdc
 alert = #ffa500
