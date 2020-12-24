@@ -1,0 +1,19 @@
+# vi:syntax=toml
+
+# base16-i3status-rust (https://github.com/mystfox/base16-i3status-rust)
+# oomox-Salon_Round by oomox-Salon_Round
+
+[theme]
+name = "solarized-dark"
+[theme.overrides]
+idle_bg = "#222222"
+idle_fg = "#dcdcdc"
+info_bg = "#969696"
+info_fg = "#222222"
+good_bg = "#a6a6a6"
+good_fg = "#222222"
+warning_bg = "#9e9e9e"
+warning_fg = "#222222"
+critical_bg = "#808080"
+critical_fg = "#222222"
+# The rest of the theme settings are left at default.

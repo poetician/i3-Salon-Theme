@@ -1,0 +1,10 @@
+## Base16 oomox-Salon_Round
+# Author: oomox-Salon_Round
+#
+# You can use these variables anywhere in the i3status configuration file.
+
+general {
+       color_good = "#a6a6a6"
+       color_bad = "#808080"
+       color_degraded = "#9e9e9e"
+}

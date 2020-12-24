@@ -1,0 +1,36 @@
+# Base16 oomox-Salon_Round - alacritty color config
+# oomox-Salon_Round
+colors:
+  # Default colors
+  primary:
+    background: '0x222222'
+    foreground: '0xdcdcdc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x222222'
+    cursor: '0xdcdcdc'
+
+  # Normal colors
+  normal:
+    black:   '0x222222'
+    red:     '0x808080'
+    green:   '0xa6a6a6'
+    yellow:  '0x9e9e9e'
+    blue:    '0x7a7a7a'
+    magenta: '0x7e7e7e'
+    cyan:    '0x969696'
+    white:   '0xdcdcdc'
+
+  # Bright colors
+  bright:
+    black:   '0x7f7f7f'
+    red:     '0x7c7c7c'
+    green:   '0x333333'
+    yellow:  '0x3d3d3d'
+    blue:    '0x0e0e0e'
+    magenta: '0x9c9c9c'
+    cyan:    '0x6a6a6a'
+    white:   '0xc0c0c0'
+
+draw_bold_text_with_bright_colors: false
